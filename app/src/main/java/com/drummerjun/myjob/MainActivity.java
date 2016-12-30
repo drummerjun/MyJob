@@ -99,19 +99,22 @@ public class MainActivity extends AppCompatActivity
         int[] jobColors = new int[] { ContextCompat.getColor(this, R.color.colorJob), Color.DKGRAY };
         int[] schoolColors = new int[] { ContextCompat.getColor(this, R.color.colorSchool), Color.DKGRAY };
         int[] bioColors = new int[] { ContextCompat.getColor(this, R.color.colorBio), Color.DKGRAY };
+        int[] githubColors = new int[] { ContextCompat.getColor(this, R.color.colorGithub), Color.DKGRAY };
         int[] textColors = new int[] { Color.BLACK, Color.DKGRAY };
         ColorStateList jobList = new ColorStateList(states, jobColors);
         ColorStateList schoolList = new ColorStateList(states, schoolColors);
         ColorStateList bioList = new ColorStateList(states, bioColors);
+        ColorStateList githubList = new ColorStateList(states, githubColors);
         ColorStateList textList = new ColorStateList(states, textColors);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setItemTextColor(textList);
         navigationView.setItemIconTintList(null);
+        navigationView.setItemTextColor(textList);
 
         navigationView.getMenu().findItem(R.id.nav_jobs).getIcon().setTintList(jobList);
         navigationView.getMenu().findItem(R.id.nav_school).getIcon().setTintList(schoolList);
         navigationView.getMenu().findItem(R.id.nav_bio).getIcon().setTintList(bioList);
+        navigationView.getMenu().findItem(R.id.nav_github).getIcon().setTintList(githubList);
         navigationView.getMenu().findItem(R.id.nav_signout).setVisible(false);
 
         navigationView.setNavigationItemSelectedListener(this);
